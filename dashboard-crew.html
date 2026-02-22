@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crew Dashboard - Airline Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header class="dashboard-header">
+      <h1>Flight Crew Dashboard</h1>
+      <div>
+        <span id="userName"></span>
+        <button id="logoutBtn" class="btn-secondary">Logout</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>My Flight Schedule</h2>
+      <table id="scheduleTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Flight</th>
+            <th>Route</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="7" class="placeholder">No assigned flights</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Upcoming Flight Details</h2>
+      <div id="nextFlightDetails">
+        <p class="placeholder">No upcoming flights scheduled</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Passenger Manifest</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="manifestFlight">Select Flight:</label>
+          <select id="manifestFlight">
+            <option value="">-- Select Flight --</option>
+          </select>
+        </div>
+      </div>
+      <table id="manifestTable">
+        <thead>
+          <tr>
+            <th>Seat</th>
+            <th>Passenger Name</th>
+            <th>Ticket ID</th>
+            <th>Special Requests</th>
+            <th>Check-in Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5" class="placeholder">Select a flight to view manifest</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Report Flight Status</h2>
+      <form id="statusReportForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reportFlight">Flight Number:</label>
+            <input type="text" id="reportFlight" required>
+          </div>
+          <div class="form-group">
+            <label for="statusType">Status:</label>
+            <select id="statusType" required>
+              <option value="">-- Select Status --</option>
+              <option value="on-time">On Time</option>
+              <option value="delayed">Delayed</option>
+              <option value="boarding">Boarding</option>
+              <option value="departed">Departed</option>
+              <option value="arrived">Arrived</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="statusNotes">Notes / Incident Report:</label>
+          <textarea id="statusNotes" rows="3" placeholder="Enter details..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Submit Report</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

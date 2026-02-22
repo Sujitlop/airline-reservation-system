@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passenger Dashboard - Airline Reservation System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <header class="dashboard-header">
+        <h1>Passenger Dashboard</h1>
+        <div>
+          <span id="userName"></span>
+          <button id="logoutBtn" class="btn-secondary">Logout</button>
+        </div>
+      </header>
+      <section>
+        <h2>Search Flights</h2>
+        <form id="searchForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="origin">From:</label>
+              <input type="text" id="origin" placeholder="e.g., NYC" required />
+            </div>
+            <div class="form-group">
+              <label for="destination">To:</label>
+              <input
+                type="text"
+                id="destination"
+                placeholder="e.g., LAX"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="departureDate">Departure Date:</label>
+              <input type="date" id="departureDate" required />
+            </div>
+            <div class="form-group">
+              <label for="passengers">Passengers:</label>
+              <input type="number" id="passengers" min="1" value="1" required />
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Search Flights</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Available Flights</h2>
+        <div id="flightResults">
+          <p class="placeholder">Search for flights to see results</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>My Bookings</h2>
+        <table id="bookingsTable">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Flight</th>
+              <th>Route</th>
+              <th>Date</th>
+              <th>Seat</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="7" class="placeholder">No bookings found</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Flight Status & Notifications</h2>
+        <div id="notifications">
+            <p class="placeholder">No new notifications</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
