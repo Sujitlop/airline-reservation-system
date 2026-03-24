@@ -3,127 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard - Airline Reservation System</title>
+  <title>Administrator Dashboard - Airline Reservation System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="dashboard">
-    <header class="dashboard-header">
-      <h1>Administrator Dashboard</h1>
-      <div>
-        <span id="userName"></span>
-        <button id="logoutBtn" class="btn-secondary">Logout</button>
-      </div>
-    </header>
 
-    <section class="card">
-      <h2>System Overview</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h3>Total Flights</h3>
-          <p class="stat-number" id="totalFlights">0</p>
-        </div>
-        <div class="stat-card">
-          <h3>Active Bookings</h3>
-          <p class="stat-number" id="activeBookings">0</p>
-        </div>
-        <div class="stat-card">
-          <h3>Revenue Today</h3>
-          <p class="stat-number" id="revenueToday">$0</p>
-        </div>
-        <div class="stat-card">
-          <h3>Aircraft Fleet</h3>
-          <p class="stat-number" id="aircraftCount">0</p>
-        </div>
-      </div>
-    </section>
+<div class="dashboard">
 
-    <section class="card">
-      <h2>Manage Flight Schedules</h2>
-      <button class="btn-primary" id="addFlightBtn">+ Add New Flight</button>
-      <table id="flightScheduleTable">
-        <thead>
-          <tr>
-            <th>Flight #</th>
-            <th>Route</th>
-            <th>Aircraft</th>
-            <th>Departure</th>
-            <th>Arrival</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="7" class="placeholder">No flights scheduled</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
 
-    <section class="card">
-      <h2>Crew Assignment</h2>
-      <form id="crewAssignmentForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="assignFlight">Flight:</label>
-            <select id="assignFlight" required>
-              <option value="">-- Select Flight --</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="crewMember">Crew Member:</label>
-            <select id="crewMember" required>
-              <option value="">-- Select Crew --</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="crewRole">Role:</label>
-            <select id="crewRole" required>
-              <option value="">-- Select Role --</option>
-              <option value="captain">Captain</option>
-              <option value="first-officer">First Officer</option>
-              <option value="flight-attendant">Flight Attendant</option>
-            </select>
-          </div>
-        </div>
-        <button type="submit" class="btn-primary">Assign Crew</button>
-      </form>
-      <div id="crewAssignments">
-        <p class="placeholder">No crew assignments yet</p>
-      </div>
-    </section>
+  <header class="dashboard-header">
+    <h1>Administrator Dashboard</h1>
+    <div>
+      <span id="userName"></span>
+      <button id="logoutBtn" class="btn-secondary">Logout</button>
+    </div>
+  </header>
 
-    <section class="card">
-      <h2>Aircraft Management</h2>
-      <button class="btn-primary" id="addAircraftBtn">+ Add Aircraft</button>
-      <table id="aircraftTable">
-        <thead>
-          <tr>
-            <th>Registration</th>
-            <th>Model</th>
-            <th>Capacity</th>
-            <th>Status</th>
-            <th>Last Maintenance</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="6" class="placeholder">No aircraft registered</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
 
-    <section class="card">
-      <h2>Revenue Analytics</h2>
-      <div id="revenueChart">
-        <p class="placeholder">Chart will be displayed here</p>
-      </div>
-    </section>
-  </div>
+  <section class="card">
+    <h2>Flight Management</h2>
 
-  <script src="app.js"></script>
+    <table>
+      <thead>
+        <tr>
+          <th>Flight #</th>
+          <th>Date</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Gate</th>
+          <th>Status</th>
+          <th>Route ID</th>
+          <th>Aircraft</th>
+        </tr>
+      </thead>
+      <tbody id="adminFlightsTable">
+        <tr>
+          <td colspan="8" class="placeholder">
+            Flight records will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <section class="card">
+    <h2>Routes</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Route ID</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Estimated Duration (hrs)</th>
+        </tr>
+      </thead>
+      <tbody id="routesTable">
+        <tr>
+          <td colspan="4" class="placeholder">
+            Route records will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <section class="card">
+    <h2>Aircraft Fleet</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tail Number</th>
+          <th>Model</th>
+          <th>Capacity</th>
+          <th>Total Hours Flown</th>
+        </tr>
+      </thead>
+      <tbody id="aircraftTable">
+        <tr>
+          <td colspan="4" class="placeholder">
+            Aircraft data will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <section class="card">
+    <h2>Maintenance Events</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Event ID</th>
+          <th>Aircraft</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Technician Notes</th>
+        </tr>
+      </thead>
+      <tbody id="maintenanceTable">
+        <tr>
+          <td colspan="5" class="placeholder">
+            Maintenance logs will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <section class="card">
+    <h2>Employees</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Job Title</th>
+          <th>Supervisor ID</th>
+        </tr>
+      </thead>
+      <tbody id="employeesTable">
+        <tr>
+          <td colspan="3" class="placeholder">
+            Employee records will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+ 
+  <section class="card">
+    <h2>Flight Crew Assignments</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Flight #</th>
+          <th>Employee ID</th>
+        </tr>
+      </thead>
+      <tbody id="crewAssignmentsTable">
+        <tr>
+          <td colspan="2" class="placeholder">
+            Crew assignments will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+ 
+  <section class="card">
+    <h2>Flight Report Logs</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Flight #</th>
+          <th>Report Log</th>
+        </tr>
+      </thead>
+      <tbody id="flightLogsTable">
+        <tr>
+          <td colspan="2" class="placeholder">
+            Flight reports will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>

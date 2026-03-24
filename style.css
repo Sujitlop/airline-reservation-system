@@ -1,222 +1,239 @@
-*{
-    box-sizing: border-box;
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f7fb;
-    color: #1f2937;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
 }
+
 
 .login {
-    width: min(92%, 400px);
-    margin: 80px auto;
-    padding: 32px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: min(92%, 400px);
+  margin: 100px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
+
 
 .dashboard {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
 }
 
+
 h1, h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 h2 {
-    font-size: 1.25rem;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 8px;
+  font-size: 1.2rem;
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
 }
 
-/* FORMS */
-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-}
 
-.form-group{
-    display: flex;
-    flex-direction: column;
-}
-
-label{
-    font-weight: 600;
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="date"], 
-input[type="number"],
-select, 
-textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-textarea{
-    resize: vertical;
-}
-
-/* BUTTONS */
-input[type="submit"],
-.btn-primary,
-.btn-secondary{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-}
-
-input[type="submit"],
-.btn-primary {
-    background-color: #2563eb;
-    color: #fff;
-}
-
-input[type="submit"]:hover,
-.btn-primary:hover {
-    background-color: #1d4ed8;
-}
-
-.btn-secondary {
-    background-color: #e5e7eb;
-    color: #374151;
-}
-
-.btn-secondary:hover {
-    background-color: #d1d5db;
-}
-
-/* Dashboard Header */
 .dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3a8a, #1e40af);
+  padding: 20px 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  color: white;
 }
 
-.dashboard-header h1{
-    font-size: 1.75rem;
-    color: #111827;
+.dashboard-header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: white;
 }
 
 .dashboard-header div {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 #userName {
   font-weight: 600;
-  color: #2563eb;
+  color: #bfdbfe;
 }
 
-/* Cards */
+
 .card {
   background: #ffffff;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* Tables */
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
 }
 
-thead{
-    background: #f9fafb;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-th td{
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+input,
+select,
+textarea {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+.btn-primary,
+.btn-secondary,
+input[type="submit"] {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary,
+input[type="submit"] {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover,
+input[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+thead {
+  background: #0f172a;
+  color: white;
+}
+
+th, td {
   text-align: left;
   padding: 12px;
-  border-bottom: 1px solid #e5e7eb;    
-}
-
-th {
-  font-weight: 600;
-  color: #374151;
+  border-bottom: 1px solid #e2e8f0;
   font-size: 0.9rem;
 }
 
 tbody tr:hover {
-  background: #f9fafb;
+  background: #f8fafc;
 }
 
 .placeholder {
-  color: #9ca3af;
+  text-align: center;
+  color: #94a3b8;
   font-style: italic;
-  text-align: center;
   padding: 20px;
 }
 
-/* Stats Grid (Admin Dashboard) */
-.stats-grid {
+
+.profile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.stat-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.stat-card h3 {
-  margin: 0 0 8px 0;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.stat-number {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-/* Flight Results */
-#flightResults {
-  display: grid;
-  gap: 12px;
-}
-
-.flight-card {
-  border: 1px solid #e5e7eb;
-  padding: 16px;
+.profile-grid div {
+  background: #f8fafc;
+  padding: 12px;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border: 1px solid #e2e8f0;
 }
 
-.flight-card:hover {
-  background: #f9fafb;
-  border-color: #2563eb;
+
+.status-Scheduled {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
 }
 
+.status-Boarding {
+  background: #ede9fe;
+  color: #5b21b6;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.status-Delayed {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.status-Departed,
+.status-Arrived {
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.status-Cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}

@@ -1,101 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Dashboard - Airline Reservation System</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Dashboard - Airline Reservation System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="dashboard">
-        <header class="dashboard-header"></header>
-        <h1>Booking Agent Dashboard</h1>
-        <div>
-            <span id="userName"></span>
-            <button id="logoutBtn" class="btn-secondary">Logout</button>
-        </div>
-        </header>
 
-        <section class="card">
-            <h2>Customer Assistance</h2>
-            <form id="customerSearchForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="customerSearch">Search Customer:</label>
-                        <input type="text" id="customerSearch" placeholder="Enter customer name or ID" />
-                    </div>
-                    <button type="submit" class="btn-primary">Search</button>
-                </div>
-            </form>
-            <div id="customerDetails">
-                <p class="placeholder">Search for a customer to see details</p>
-            </div>
-        </section>
+<div class="dashboard">
 
-        <section class="card">
-            <h2>Create New Booking</h2>
-            <form id="newBookingForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="passengerName">Passenger Name:</label>
-                        <input type="text" id="passengerName" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="flightNumber">Flight Number:</label>
-                        <input type="text" id="flightNumber" placeholder="e.g., AA101" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="seatPreference">Seat Preference:</label>
-                        <select id="seatPreference">
-                            <option value="any">Any Available</option>
-                            <option value="window">Window</option>
-                            <option value="aisle">Aisle</option>
-                            <option value="middle">Middle</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="specialRequests">Special Requests:</label>
-                        <input type="text" id="specialRequests" placeholder="e.g., wheelchair, meal">
-                    </div>
-                </div>
-                <button type="submit" class="btn-primary">Create Booking</button>
-            </form>
-        </section>
-
-        <section class="card">
-            <h2>Manage Bookings</h2>
-            <table id="allBookingsTable">
-                <thead>
-                    <tr>
-                        <th>Booking ID</th>
-                        <th>Passenger</th>
-                        <th>Flight</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="6" class="placeholder">No pending bookings</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section class="card">
-            <h2>Issue Tickets & Boarding Passes</h2>
-            <div id="ticketIssue">
-                <p class="placeholder">Select a confirmed booking to issue ticket</p>
-            </div>
-        </section>
+  <header class="dashboard-header">
+    <h1>Booking Agent Dashboard</h1>
+    <div>
+      <span id="userName"></span>
+      <button id="logoutBtn" class="btn-secondary">Logout</button>
     </div>
-    <script src="app.js"></script>
-</body>
+  </header>
 
+
+  <section class="card">
+    <h2>Flight Details</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Flight #</th>
+          <th>Route</th>
+          <th>Date</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Gate</th>
+          <th>Status</th>
+          <th>Aircraft</th>
+          <th>Capacity</th>
+        </tr>
+      </thead>
+      <tbody id="staffFlightTable">
+        <tr>
+          <td colspan="9" class="placeholder">
+            Flight details will load here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+ 
+  <section class="card">
+    <h2>Create Booking</h2>
+
+    <form id="createBookingForm">
+
+      <div class="form-group">
+        <label>Passenger ID</label>
+        <input type="text" placeholder="U000000001" required>
+      </div>
+
+      <div class="form-group">
+        <label>Flight Number</label>
+        <input type="text" placeholder="F1001" required>
+      </div>
+
+      <div class="form-group">
+        <label>Seat Number</label>
+        <input type="text" placeholder="12A" required>
+      </div>
+
+      <div class="form-group">
+        <label>Price ($)</label>
+        <input type="number" min="500" step="0.01" placeholder="1000.00" required>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        Create Booking
+      </button>
+
+    </form>
+
+  </section>
+
+  <section class="card">
+    <h2>All Bookings</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Passenger</th>
+          <th>Email</th>
+          <th>Flight</th>
+          <th>Route</th>
+          <th>Date</th>
+          <th>Seat</th>
+          <th>Status</th>
+          <th>Price ($)</th>
+          <th>Agent</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bookingDetailsTable">
+        <tr>
+          <td colspan="11" class="placeholder">
+            Booking records will appear here
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
 </html>

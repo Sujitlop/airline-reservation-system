@@ -13,13 +13,12 @@ A web-based airline reservation and scheduling system built with HTML, CSS, Java
 ## Tech Stack
 
 ### Frontend
-- HTML5, CSS3, Vanilla JavaScript
+- HTML5, CSS3, JavaScript
 - Session-based authentication
 
 ### Backend (In Development)
 - Python + FastAPI
 - MySQL Database
-- SQLAlchemy ORM
 - JWT Authentication
 
 ## Current Status

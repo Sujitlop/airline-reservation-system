@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airline Reservation System - Login</title>
+  <title>Airline Reservation System</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="login">
-    <h1>Airline Reservation System</h1>
 
+  <section class="card login login-section">
+    <h2>Login</h2>
     <form id="loginForm">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <input type="submit" value="Login">
+      <div class="form-group">
+        <label>Email or First Name</label>
+        <input type="text" id="username" placeholder="Enter your email or first name" title="Enter your email or first name" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password" title="Enter your password" required>
+      </div>
+      <button type="submit" class="btn-primary">Login</button>
     </form>
+  </section>
 
-  </div>
+  <section class="card login register-section">
+    <h2>Create Passenger Account</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" id="regFirstName" placeholder="Enter your first name" title="Enter your first name" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" id="regLastName" placeholder="Enter your last name" title="Enter your last name" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="regEmail" placeholder="Enter your email" title="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" id="regPhone" maxlength="10" placeholder="Enter your phone number" title="Enter your phone number" required>
+      </div>
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" id="regDob" title="Enter your date of birth" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="regPassword" placeholder="Enter your password" title="Enter your password" required>
+      </div>
+      <button type="submit" class="btn-secondary">Register</button>
+    </form>
+  </section>
 
   <script src="app.js"></script>
 </body>
+
 </html>
